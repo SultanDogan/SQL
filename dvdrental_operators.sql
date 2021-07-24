@@ -48,12 +48,23 @@ SELECT * FROM film
 WHERE title LIKE 'C%' AND length >90 AND rental_rate = 2.99;
 
 
+-- Find the distinct replacement cost values in the film table.
+SELECT DISTINCT replacement_cost FROM film;
 
+-- Find the number of distinct replacement cost values in the film table.
+SELECT COUNT(DISTINCT replacement_cost) FROM film;
 
+--How many film title start with 'T' and has 'G' as a rating.
+SELECT COUNT(title) FROM film
+WHERE title LIKE 'T%' AND rating = 'G';
 
+--How many country has name lenght as 5 letter.
+SELECT COUNT(country) FROM country
+WHERE country LIKE '_____';
 
-
-
+-- Find the number of cities that finish with letter 'b'.
+SELECT COUNT(city) FROM city
+WHERE city ILIKE '%R';
 
 
 
