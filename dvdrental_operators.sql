@@ -31,3 +31,30 @@ SELECT * FROM film
 WHERE rental_rate IN (0.99,2.99,4.99) AND replacement_cost IN (12.99,15.99,28.99);
 
 
+-- Take the counrties that start and end with 'a' letter from counrty table.
+SELECT country FROM country
+WHERE country LIKE 'A%a';
+
+-- Take the countries that ends with letter 'n' and include at least 6 letter.
+SELECT country FROM country
+WHERE country LIKE '_____%n';
+
+-- From film table take the film titles which include at least 4 't' (upper or lowercase).
+SELECT title FROM film
+WHERE title ILIKE '%T%T%T%T%';
+
+-- Take the films that start with 'C' and length is greater than 90 and rental rate is eaual to 2.99.
+SELECT * FROM film
+WHERE title LIKE 'C%' AND length >90 AND rental_rate = 2.99;
+
+
+
+
+
+
+
+
+
+
+
+
