@@ -67,5 +67,28 @@ SELECT COUNT(city) FROM city
 WHERE city ILIKE '%R';
 
 
+-- Find the 5 longest films that last letters are 'n'.
+SELECT * FROM film
+WHERE title LIKE '%n'
+ORDER BY length DESC
+LIMIT 5;
+
+-- Find the second 5 shortest films that last letters are 'n'.
+SELECT * FROM film
+WHERE title LIKE '%n'
+ORDER BY length
+OFFSET 5
+LIMIT 5;
+
+-- From customer table take the first 4 data that ordered by last name(descending) and store id =1.
+SELECT * FROM customer
+WHERE store_id =1
+ORDER BY last_name DESC
+LIMIT 4;
+
+
+
+
+
 
 
