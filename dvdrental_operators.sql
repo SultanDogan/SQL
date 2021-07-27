@@ -54,11 +54,11 @@ SELECT DISTINCT replacement_cost FROM film;
 -- Find the number of distinct replacement cost values in the film table.
 SELECT COUNT(DISTINCT replacement_cost) FROM film;
 
---How many film title start with 'T' and has 'G' as a rating.
+--How many film title start with 'T' and has 'G' as a rating?
 SELECT COUNT(title) FROM film
 WHERE title LIKE 'T%' AND rating = 'G';
 
---How many country has name lenght as 5 letter.
+--How many country has name lenght as 5 letter?
 SELECT COUNT(country) FROM country
 WHERE country LIKE '_____';
 
@@ -86,6 +86,21 @@ WHERE store_id =1
 ORDER BY last_name DESC
 LIMIT 4;
 
+
+-- Find average of the rental rate values in the film table.
+SELECT AVG(rental_rate) FROM film;
+
+-- Find the number of films that stars with letter 'C'.
+SELECT COUNT(*) FROM film
+WHERE title LIKE 'C%';
+
+-- Find the length of longest film that has 0.99 as a rental rate value.
+SELECT MAX(length) FROM film
+WHERE rental_rate = 0.99;
+
+-- How many different replacement_cost values are there for the movies longer than 150 minutes in the movie table?
+SELECT COUNT(DISTINCT replacement_cost) FROM film
+WHERE length > 150;
 
 
 
