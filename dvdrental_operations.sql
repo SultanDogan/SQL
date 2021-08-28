@@ -143,7 +143,12 @@ WHERE rental_rate =
 SELECT (SELECT MIN(rental_rate)FROM film),(SELECT MIN(replacement_cost)FROM film) FROM film;
 
 -- Find the customers that made maximum amount of shopping.
-SELECT (SELECT MAX(amount) FROM payment) FROM payment;
+SELECT SUM(amount),customer.first_name,customer.last_name
+FROM payment
+JOIN customer ON customer.customer_id = payment.customer_id
+GROUP BY payment.customer_id, customer.first_name,customer.last_name
+ORDER BY SUM(amount) DESC
+LIMIT 1;
 
 
 
