@@ -84,6 +84,16 @@ SELECT rental_id,first_name,last_name FROM customer
 INNER JOIN rental ON rental.rental_id = customer.customer_id;
 
 
+-- Use left join to get city names and country names together.
+SELECT city,country FROM city
+LEFT JOIN country ON city.city_id = country.country_id;
 
+-- Use right join on customer and payment table to get payment_id, first_name and last_name columns.
+SELECT payment_id,first_name,last_name FROM customer
+RIGHT JOIN payment ON payment.customer_id = customer.customer_id;
+
+-- Use full join on customer and rental table to get renta_id,first_name and last_name columns.
+SELECT rental_id,first_name,last_name FROM customer
+FULL JOIN rental ON rental.rental_id = customer.customer_id;
 
 
