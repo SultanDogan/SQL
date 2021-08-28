@@ -71,4 +71,19 @@ WHERE id =5;
 
 
 
+-- Use inner join to get city names and country names together.
+SELECT city,country FROM city
+INNER JOIN country ON city.city_id = country.country_id;
+
+-- Use inner join on customer and payment table to get payment_id, first_name and last_name columns.
+SELECT payment_id,first_name,last_name FROM customer
+INNER JOIN payment ON payment.customer_id = customer.customer_id;
+
+-- Use inner join on customer and rental table to get renta_id,first_name and last_name columns.
+SELECT rental_id,first_name,last_name FROM customer
+INNER JOIN rental ON rental.rental_id = customer.customer_id;
+
+
+
+
 
