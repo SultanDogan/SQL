@@ -97,3 +97,23 @@ SELECT rental_id,first_name,last_name FROM customer
 FULL JOIN rental ON rental.rental_id = customer.customer_id;
 
 
+-- Call the first_name columns of actor and customer tables.
+SELECT first_name FROM actor
+UNION
+SELECT first_name FROM customer;
+
+-- Call the intersection of first_name columns of actor and customer tables.
+SELECT first_name FROM actor
+INTERSECT
+SELECT first_name FROM customer;
+
+-- Call the first_name values that found in actor table but not in customer table.
+SELECT first_name FROM actor
+EXCEPT
+SELECT first_name FROM customer;
+
+
+
+
+
+
