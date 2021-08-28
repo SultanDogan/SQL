@@ -125,5 +125,25 @@ ORDER BY COUNT(*) DESC
 LIMIT 1;
 
 
+-- Find the number of film that leghts are greater than average film length.
+SELECT COUNT(length) FROM film
+WHERE length >
+(
+	SELECT AVG(length) FROM film
+);
+
+-- Find the number of films that has highest rental_rate value.
+SELECT COUNT(*) FROM film
+WHERE rental_rate =
+(
+	SELECT MAX(rental_rate) FROM film
+);
+
+-- Find the films that has lowest rental_rate and replacement_cost value.
+SELECT (SELECT MIN(rental_rate)FROM film),(SELECT MIN(replacement_cost)FROM film) FROM film;
+
+-- Find the customers that made maximum amount of shopping.
+SELECT (SELECT MAX(amount) FROM payment) FROM payment;
+
 
 
